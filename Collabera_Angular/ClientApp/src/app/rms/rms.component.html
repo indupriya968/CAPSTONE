@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="col-md-6 d-none d-md-flex bg-image"></div>
+    <div class="col-md-6 bg-light">
+      <div class="login d-flex align-items-center py-5">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h3 class="display-4">Register</h3>
+
+
+              <form [formGroup]="regForm">
+
+                <div>
+                  <input type="text" id="FIRSTNAME" formControlName="FIRSTNAME" placeholder="ENTER FIRSTNAME" class="form-control rounded-pill box-shadow" />
+                  <span *ngIf="(this.regForm.get('FIRSTNAME')?.touched || this.regForm.get('FIRSTNAME')?.dirty) && this.regForm.get('FIRSTNAME')?.errors">
+                    <span *ngIf="this.regForm.get('FIRSTNAME')?.errors?.required">FIRSTNAME is Required </span>
+                  </span>
+                </div><br />
+                <div>
+                  <input type="text" id="LASTNAME" formControlName="LASTNAME" placeholder="ENTER LASTNAME" class="form-control rounded-pill box-shadow" />
+                  <span *ngIf="(this.regForm.get('LASTNAME')?.touched || this.regForm.get('LASTNAME')?.dirty) && this.regForm.get('LASTNAME')?.errors">
+                    <span *ngIf="this.regForm.get('LASTNAME')?.errors?.required">LASTNAME is Required </span>
+                  </span>
+                </div><br />
+                <div>
+                  <input type="text" id="USERNAME" formControlName="USERNAME" placeholder="ENTER USERNAME" class="form-control rounded-pill box-shadow" />
+                  <span *ngIf="(this.regForm.get('USERNAME')?.touched || this.regForm.get('USERNAME')?.dirty) && this.regForm.get('USERNAME')?.errors">
+                    <span *ngIf="this.regForm.get('USERNAME')?.errors?.required">USERNAME is Required </span>
+                  </span>
+                </div><br />
+                <div>
+                  <input type="text" id="PASSWORD" formControlName="PASSWORD" placeholder="ENTER PASSWORD" class="form-control rounded-pill box-shadow" />
+                  <span *ngIf="(this.regForm.get('PASSWORD')?.touched || this.regForm.get('PASSWORD')?.dirty) && this.regForm.get('PASSWORD')?.errors">
+                    <span *ngIf="this.regForm.get('PASSWORD')?.errors?.required">PASSWORD is Required </span>
+                  </span>
+                </div><br />
+                
+
+                  <button (click)="registerClick()" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Register</button>
+                <div *ngIf="status" class="btn-warning">registered successfully!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
